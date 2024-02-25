@@ -1,0 +1,143 @@
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Kosugi Maru';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/kosugi-maru-v14-cyrillic_japanese-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* nunito-regular - cyrillic_latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/nunito-v26-cyrillic_latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* nunito-800 - cyrillic_latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/nunito-v26-cyrillic_latin-800.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* nunito-900 - cyrillic_latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/nunito-v26-cyrillic_latin-900.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-container {
+    position: relative;
+}
+.card {
+    height: 400px;
+    width: 300px;
+    background-color: rgba(120, 186, 190, 0.784);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+
+    gap: 20px;
+    padding: 50px 20px;
+    transition: all 0.8s;
+}
+
+.reversed {
+    transform: rotateY(180deg);
+    transition: all 0.8s;
+}
+
+.buttons {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+}
+.up {
+    top: 20px;
+    left: 20px;
+}
+
+.showkanji {
+    height: 50px;
+    width: 50px;
+    background-image: url('show.png');
+    background-size: 50px;
+}
+.hidekanji {
+    background-image: url('hide.png');
+}
+
+.arrow {
+    height: 50px;
+    width: 50px;
+    background-image: url('arrow.png');
+    background-size: 40px;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    justify-self: flex-end;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+.deleteword {
+    height: 50px;
+    width: 50px;
+    background-image: url('delete.png');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.kanji, .reading {
+    font-family: 'Kosugi Maru';
+    font-size: 30px;
+}
+.translation {
+    font-family: 'Nunito';
+    font-size: 20px;
+    transform: rotateY(180deg);
+}
+
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: all 0.8s;
+}
